@@ -234,6 +234,9 @@
     <Compile Include="Company_DashBoard.xaml.cs">
       <DependentUpon>Company_DashBoard.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Company_Job_Management.xaml.cs">
+      <DependentUpon>Company_Job_Management.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Company_Profile.xaml.cs">
       <DependentUpon>Company_Profile.xaml</DependentUpon>
     </Compile>
@@ -246,7 +249,6 @@
     <Compile Include="Friend_List_Window.xaml.cs">
       <DependentUpon>Friend_List_Window.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Job_Available.xaml.cs" />
     <Compile Include="Messages.xaml.cs">
       <DependentUpon>Messages.xaml</DependentUpon>
     </Compile>
@@ -261,6 +263,9 @@
     </Compile>
     <Compile Include="SearchJob_Window.xaml.cs">
       <DependentUpon>SearchJob_Window.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="User_Job_Listing.xaml.cs">
+      <DependentUpon>User_Job_Listing.xaml</DependentUpon>
     </Compile>
     <Page Include="Applicant_DashBoard.xaml">
       <SubType>Designer</SubType>
@@ -291,6 +296,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Company_DashBoard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Company_Job_Management.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -370,6 +379,10 @@
     <Page Include="Theme\TextBox.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="User_Job_Listing.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>

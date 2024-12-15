@@ -15,13 +15,13 @@ using System.Windows.Shapes;
 namespace Project_Polished_Version
 {
     /// <summary>
-    /// Interaction logic for Job_Available.xaml
+    /// Interaction logic for Company_Job_Management.xaml
     /// </summary>
-    public partial class Job_Available : Window
+    public partial class Company_Job_Management : Window
     {
-        public Job_Available()
+        public Company_Job_Management()
         {
-            //InitializeComponent();
+            InitializeComponent();
         }
     }
 }
