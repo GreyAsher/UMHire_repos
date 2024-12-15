@@ -46,9 +46,9 @@
             </Button.Template>
         </Button>
 
-        <Image Source="Images/Logo.png" HorizontalAlignment="Left" Height="200" Margin="-12,282,0,0" VerticalAlignment="Top" Width="200"/>
-        <Image Source="Images/UMLOGO.png" HorizontalAlignment="Left" Height="100" Margin="38,177,0,0" VerticalAlignment="Top" Width="100"/>
-        <Image Source="Images/ICEPEP_Logo.png" HorizontalAlignment="Left" Height="120" Margin="165,304,0,0" VerticalAlignment="Top" Width="120"/>
+        <Image Source="Images/Logo.png" HorizontalAlignment="Left" Height="180" Margin="113,260,0,0" VerticalAlignment="Top" Width="180"/>
+        <Image Source="Images/UMLOGO.png" HorizontalAlignment="Left" Height="80" Margin="103,214,0,0" VerticalAlignment="Top" Width="80"/>
+        <Image Source="Images/ICEPEP_Logo.png" HorizontalAlignment="Left" Height="100" Margin="212,204,0,0" VerticalAlignment="Top" Width="100"/>
 
     </Grid>
 </Window>
