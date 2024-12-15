@@ -4,7 +4,8 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Height="670"
+        Height="670
+        "
         Width="1000"
         Title="UM HIRE"
         Icon="Images/UMHIREICON.ico"
@@ -12,6 +13,7 @@
         ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen">
 
+    
     <Border Background="White">
         <Grid>
 
@@ -30,11 +32,13 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="75"/>
                 <!-- Adjusted for new height -->
-                <RowDefinition Height="*"/>
+                <RowDefinition Height="14*"/>
+                <RowDefinition Height="500*"/>
+                <RowDefinition Height="0*"/>
             </Grid.RowDefinitions>
 
             <StackPanel
-                Grid.Row="1" Margin="0,3,0,0">
+                Grid.Row="1" Margin="0,3,0,0" Grid.RowSpan="2">
 
                 <RadioButton x:Name="Profile_RB"
                     Content="Profile"
@@ -64,26 +68,18 @@
                     FontSize="14"
                     Style="{StaticResource MenuButtons}" Margin="-30,15,0,0" Checked="Messages_RB_Checked"/>
 
-                <Grid Margin="10,100,10,0">
-                    <RadioButton 
-                        x:Name="Log_Out_RB"
-                        Content="Log Out"
-                        Height="60"
-                        Foreground="White"
-                        FontSize="14"
-                        Style="{StaticResource MenuButtons}" Click="Log_Out_Button" Margin="-40,60,-10,-75" Width="180"/>
-                </Grid>
+                
             </StackPanel>
 
             <ListBox Name="DropdownList" 
                      Grid.Row="1" 
-                     Visibility="Collapsed" Grid.ColumnSpan="2" Margin="0,0,343,0"/>
+                     Visibility="Collapsed" Grid.ColumnSpan="2" Margin="0,0,343,0" Grid.RowSpan="2"/>
 
-            <Grid Margin="0,0,0,454" Grid.RowSpan="2">
+            <Grid Margin="0,0,0,453" Grid.RowSpan="3">
                 <Image Source="Images/LOGO.png" HorizontalAlignment="Left" Height="150" VerticalAlignment="Top" Width="150"/>
             </Grid>
 
-            <Grid Grid.Column="1">
+            <Grid Grid.Column="1" Grid.ColumnSpan="2" Margin="0,0,85,0">
                 <Grid>
                     <Grid Height="100" VerticalAlignment="Top">
                         <ListBox Name="SearchResultsListBox" Height="400" VerticalAlignment="Top" Margin="10,40,10,10" Visibility="Collapsed" MouseDoubleClick="Searched_Person"/>
@@ -92,7 +88,7 @@
             </Grid>
 
             <!-- Newsfeed Section -->
-            <StackPanel Grid.Column="1" Grid.Row="1" Margin="10,50,10,0" VerticalAlignment="Top" Grid.ColumnSpan="4">
+            <StackPanel Grid.Column="1" Grid.Row="2" Margin="10,8,10,0" VerticalAlignment="Top" Grid.ColumnSpan="4" Height="489">
 
                 <TextBlock Text="Community Post" 
                            FontSize="16" 
@@ -118,8 +114,8 @@
                 Height="25"
                 VerticalAlignment="Top"
                 Click="Add_Post"
-                Margin="128,546,26,0"
-                Grid.Row="1">
+                Margin="128,504,26,0"
+                Grid.Row="2">
                 <Button.Template>
                     <ControlTemplate TargetType="Button">
                         <Border Background="{TemplateBinding Background}"
@@ -185,6 +181,16 @@
                 </Button.Template>
             </Button>
 
+            <Grid Margin="10,9,10,504" Grid.Row="2">
+                <RadioButton 
+        x:Name="Log_Out_RB"
+        Content="Log Out"
+        Height="60"
+        Foreground="White"
+        FontSize="14"
+        Style="{StaticResource MenuButtons}" Click="Log_Out_Button" Margin="-36,479,-14,-489" Width="180"/>
+            </Grid>
+
             <Button x:Name="c_search" 
                 Grid.Column="3" 
                 Content="Search for Companies" 
@@ -220,6 +226,8 @@
                 </Button.RenderTransform>
             </Button>
 
+            
+            
         </Grid>
     </Border>
 </Window>
