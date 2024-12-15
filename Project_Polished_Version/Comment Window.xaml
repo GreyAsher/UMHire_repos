@@ -5,21 +5,24 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Project_Polished_Version"
         mc:Ignorable="d"
-        Height="400" Width="500
-        "
+        Height="400" Width="500"
         Title="UM HIRE"
         Icon="Images/UMHIREICON.ico"
         Background="Transparent"
         ResizeMode="NoResize"
-        WindowStartupLocation="CenterScreen">
-    <Grid>
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None">
+
+    <Grid Height="400" VerticalAlignment="Top">
         <!-- Set the Grid background using an ImageBrush -->
         <Grid.Background>
-            <ImageBrush ImageSource="Images/Blue.jpg" Stretch="UniformToFill"/>
+            <ImageBrush ImageSource="Images/Bluezoom.jpg" Stretch="UniformToFill"/>
         </Grid.Background>
 
+        <!-- Close Button in Top Left -->
+
         <!-- Comment List Box -->
-        <ListBox x:Name="CommentList" Margin="10,10,10,80">
+        <ListBox x:Name="CommentList" Margin="10,50,10,0" Height="289" VerticalAlignment="Top">
             <!-- Each comment in the ListBox -->
             <ListBox.ItemTemplate>
                 <DataTemplate>
@@ -45,10 +48,8 @@
             </ListBox.ItemTemplate>
         </ListBox>
 
-        <!-- TextBox to Add New Comment -->
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Margin="10,0,10,10">
-            <TextBox x:Name="NewCommentBox" Width="500" Height="40" VerticalAlignment="Center" Margin="0,0,10,0" Padding="5"/>
-            <Button Content="Post" Width="60" Height="40" VerticalAlignment="Center" Click="PostComment_Click"/>
-        </StackPanel>
+        <TextBox x:Name="NewCommentBox" Width="400" Height="30" Margin="10,355,90,0" Padding="5" VerticalAlignment="Top"/>
+        <Button Content="Post" Width="69" Height="30" VerticalAlignment="Top" Click="PostComment_Click" Margin="421,355,10,0"/>
+        <Button Content="Back" HorizontalAlignment="Left" VerticalAlignment="Top" Width="80" Height="25" Margin="10,10,0,0" Click="BackButton_Click"/>
     </Grid>
 </Window>
