@@ -42,7 +42,7 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
 
-            <Label Grid.Row="0" Content="Fist name" Margin="10"/>
+            <Label Grid.Row="0" Content="First name" Margin="10"/>
             <TextBox x:Name="Company_Name_TxtBox" Grid.Row="0" VerticalAlignment="Center" Margin="100,10,20,10"/>
             <StackPanel Grid.Row="2" Orientation="Horizontal" VerticalAlignment="Center" Margin="100,10,20,10"/>
 
