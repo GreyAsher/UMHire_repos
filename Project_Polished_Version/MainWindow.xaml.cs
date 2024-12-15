@@ -3,6 +3,7 @@ using Project_Polished_Version.Classes;
 using System;
 using System.Collections.Generic;
 using System.Windows;
+using System.Windows.Input;
 
 
 namespace Project_Polished_Version
@@ -208,6 +209,11 @@ namespace Project_Polished_Version
 
                 UnhashedPassword.Content = "Hide Password";
             }
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+           
         }
     }
 }

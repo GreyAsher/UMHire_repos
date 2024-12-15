@@ -20,7 +20,7 @@
                         Stretch="UniformToFill"/>
         </Grid.Background>
         <TextBlock HorizontalAlignment="Left" Height="132" Margin="113,29,0,0" TextWrapping="Wrap" Text="Welcome to UM Hire" VerticalAlignment="Top" Width="287" Foreground="White" FontSize="40" FontWeight="Bold" FontFamily="Yu Gothic UI"/>
-        <TextBlock HorizontalAlignment="Left" Height="142" Margin="384,166,0,0" 
+        <TextBlock HorizontalAlignment="Left" Height="142" Margin="382,182,0,0" 
            TextWrapping="Wrap" VerticalAlignment="Top" Width="358" 
            FontSize="10" Foreground="White" TextAlignment="Justify"><Run Text="&#x9;Whether you're an employer looking for top talent or a job seeker searching for your next opportunity, UM Hire provides a streamlined, intuitive platform to meet all your hiring needs. From job listings to applications, everything is designed to make the process faster, easier, and more efficient."/><LineBreak/><Run/><LineBreak/><Run Text="&#x9;Let us help you connect, grow, and succeed. Join the UM Hire community today!"/></TextBlock>
         <Button Content="Get Started!&gt;" 

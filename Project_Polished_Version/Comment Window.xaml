@@ -5,24 +5,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Project_Polished_Version"
         mc:Ignorable="d"
-        Height="400" Width="500"
+        Height="400" Width="360"
         Title="UM HIRE"
         Icon="Images/UMHIREICON.ico"
-        Background="Transparent"
+        Background="AliceBlue"
         ResizeMode="NoResize"
-        WindowStartupLocation="CenterScreen"
-        WindowStyle="None">
+        WindowStyle="None"
+        WindowStartupLocation="CenterScreen">
+
 
     <Grid Height="400" VerticalAlignment="Top">
         <!-- Set the Grid background using an ImageBrush -->
-        <Grid.Background>
-            <ImageBrush ImageSource="Images/Bluezoom.jpg" Stretch="UniformToFill"/>
-        </Grid.Background>
+       
 
         <!-- Close Button in Top Left -->
 
         <!-- Comment List Box -->
-        <ListBox x:Name="CommentList" Margin="10,50,10,0" Height="289" VerticalAlignment="Top">
+        <ListBox x:Name="CommentList" Margin="10,50,0,0" Height="289" VerticalAlignment="Top" HorizontalAlignment="Left" Width="340">
             <!-- Each comment in the ListBox -->
             <ListBox.ItemTemplate>
                 <DataTemplate>
@@ -48,8 +47,34 @@
             </ListBox.ItemTemplate>
         </ListBox>
 
-        <TextBox x:Name="NewCommentBox" Width="400" Height="30" Margin="10,355,90,0" Padding="5" VerticalAlignment="Top"/>
-        <Button Content="Post" Width="69" Height="30" VerticalAlignment="Top" Click="PostComment_Click" Margin="421,355,10,0"/>
-        <Button Content="Back" HorizontalAlignment="Left" VerticalAlignment="Top" Width="80" Height="25" Margin="10,10,0,0" Click="BackButton_Click"/>
+        <TextBox x:Name="NewCommentBox" Width="260" Height="30" Margin="10,355,0,0" Padding="5" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+        <Button Content="Post" Width="69" Height="30" VerticalAlignment="Top" Margin="281,355,0,0" HorizontalAlignment="Left">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="White" 
+                    CornerRadius="10" 
+                    BorderBrush="DarkGray" 
+                    BorderThickness="1">
+                        <ContentPresenter HorizontalAlignment="Center" 
+                                  VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+        <Button Content="Close" HorizontalAlignment="Left" VerticalAlignment="Top" Width="80" Height="25" Margin="10,10,0,0" Click="Button_Click">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="White" 
+                    CornerRadius="10" 
+                    BorderBrush="DarkGray" 
+                    BorderThickness="1">
+                        <ContentPresenter HorizontalAlignment="Center" 
+                                  VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
     </Grid>
 </Window>

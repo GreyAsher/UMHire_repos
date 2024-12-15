@@ -166,6 +166,7 @@ namespace Project_Polished_Version
 
         private ListBoxItem CreateNewsfeedItem(string userName, string content)
         {
+            // Border for the newsfeed item
             var border = new Border
             {
                 Background = new ImageBrush
@@ -175,79 +176,99 @@ namespace Project_Polished_Version
                 },
                 CornerRadius = new CornerRadius(10),
                 Padding = new Thickness(10),
-                Margin = new Thickness(5),
-                Child = new Grid
-                {
-                    RowDefinitions =
-            {
-                new RowDefinition { Height = GridLength.Auto }, // userName and content
-                new RowDefinition { Height = GridLength.Auto }  // buttons
-            },
-                    Children =
-            {
-                // UserName and Content Section
-                new StackPanel
-                {
-                    Orientation = Orientation.Vertical,
-                    Children =
-                    {
-                new StackPanel
-                {
-                    Orientation = Orientation.Vertical,
-                    Children =
-                    {
-                        new TextBlock
-                        {
-                            Text = userName,
-                            FontWeight = FontWeights.Bold,
-                            Margin = new Thickness(5, 0, 5, 5),
-                            Foreground = Brushes.White
-                        },
-                        new TextBlock
-                        {
-                            Text = content,
-                            TextWrapping = TextWrapping.Wrap,
-                            Margin = new Thickness(5, 0, 5, 0),
-                            Foreground = Brushes.White
-                        }
-                    }
-                }
-
-                    }
-                },
-
-                // Buttons Section
-                new StackPanel
-                {
-                    Orientation = Orientation.Horizontal,
-                    HorizontalAlignment = HorizontalAlignment.Right,
-                    Margin = new Thickness(0, 5, 0, 0),
-                    Children =
-                    {
-                        new Button
-                        {
-                            Content = "View Comments",
-                            Margin = new Thickness(5, 0, 5, 0),
-                            Padding = new Thickness(10, 5, 10, 5)
-                        },
-                        new Button
-                        {
-                            Content = "View Details",
-                            Margin = new Thickness(5, 0, 0, 0),
-                            Padding = new Thickness(10, 5, 10, 5)
-                        }
-                    }
-                }
-            }
-                }
+                Margin = new Thickness(5)
             };
 
-            // Set rows for the grid children
-            Grid.SetRow(border.Child, 0); // UserName and Content
-            Grid.SetRow((border.Child as Grid)?.Children[1], 1); // Buttons Section
-
-            return new ListBoxItem { Content = border, Height = 100 };
+            // Grid inside the Border
+            var grid = new Grid
+            {
+                RowDefinitions =
+        {
+            new RowDefinition { Height = GridLength.Auto }, // UserName and Content
+            new RowDefinition { Height = GridLength.Auto }  // Buttons
         }
+            };
+
+            // UserName and Content Section
+            var contentPanel = new StackPanel
+            {
+                Orientation = Orientation.Vertical,
+                Children =
+        {
+            new TextBlock
+            {
+                Text = userName,
+                FontWeight = FontWeights.Bold,
+                Margin = new Thickness(5, 0, 5, 5),
+                Foreground = Brushes.White
+            },
+            new TextBlock
+            {
+                Text = content,
+                TextWrapping = TextWrapping.Wrap,
+                Margin = new Thickness(5, 0, 5, 0),
+                Foreground = Brushes.White
+            }
+        }
+            };
+
+            // Buttons Section
+            var buttonPanel = new StackPanel
+            {
+                Orientation = Orientation.Horizontal,
+                HorizontalAlignment = HorizontalAlignment.Right,
+                Margin = new Thickness(0, 5, 0, 0)
+            };
+
+            // Like Button
+            var likeButton = new Button
+            {
+                Content = "Like",
+                Margin = new Thickness(5, 0, 5, 0),
+                Padding = new Thickness(10, 5, 10, 5)
+            };
+            likeButton.Click += (sender, e) => MessageBox.Show("Liked!");
+
+            // View Comment Button
+            var viewCommentButton = new Button
+            {
+                Content = "View Comment",
+                Margin = new Thickness(5, 0, 0, 0),
+                Padding = new Thickness(10, 5, 10, 5)
+            };
+
+            // Add functionality to open the Comment_Window at the mouse position
+            viewCommentButton.Click += (sender, e) =>
+            {
+               
+
+                // Open the Comment_Window at the mouse position
+                Comment_Window commentWindow = new Comment_Window();
+                commentWindow.ShowDialog();
+            };
+
+            // Add buttons to the button panel
+            buttonPanel.Children.Add(likeButton);
+            buttonPanel.Children.Add(viewCommentButton);
+
+            // Add contentPanel and buttonPanel to the Grid
+            Grid.SetRow(contentPanel, 0); // First row
+            Grid.SetRow(buttonPanel, 1);  // Second row
+            grid.Children.Add(contentPanel);
+            grid.Children.Add(buttonPanel);
+
+            // Set the Grid as the child of the Border
+            border.Child = grid;
+
+            // Return a ListBoxItem containing the Border
+            return new ListBoxItem
+            {
+                Content = border,
+                Height = 150,
+                Margin = new Thickness(0, 5, 0, 5)
+            };
+        }
+
 
         private void searchJobs_btn(object sender, RoutedEventArgs e)
         {

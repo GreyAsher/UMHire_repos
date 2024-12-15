@@ -61,7 +61,7 @@
                         Background="Transparent" 
                         Foreground="White" 
                         FontWeight="Bold" 
-                        BorderThickness="0"/>
+                        BorderThickness="0" Click="Button_Click"/>
                     </Border>
                     <Border CornerRadius="10" Background="#074799" Margin="5">
                         <Button Content="f" Width="40" Height="40" 
